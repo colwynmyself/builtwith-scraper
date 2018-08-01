@@ -1,0 +1,9 @@
+[package]
+name = "built_with_scraper"
+version = "0.0.1"
+authors = ["Colwyn Fritze-Moor <colwyn@colwyn.me>"]
+
+[dependencies]
+config = "0.9"
+hyper = "0.12"
+hyper-tls = "0.3.0"
