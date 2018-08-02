@@ -5,5 +5,7 @@ authors = ["Colwyn Fritze-Moor <colwyn@colwyn.me>"]
 
 [dependencies]
 config = "0.9"
+futures = "0.1.23"
 hyper = "0.12"
 hyper-tls = "0.3.0"
+queryst = "2.0.0"
