@@ -1,8 +1,12 @@
+#[macro_use]
+extern crate diesel;
+
 extern crate futures;
 extern crate hyper;
 extern crate queryst;
 
 mod util;
+mod db;
 
 use futures::future;
 use hyper::rt::{self, Future};
@@ -37,6 +41,11 @@ fn router(req: Request<Body>) -> BoxFuture {
 
                 *response.body_mut() = body;
             }
+        }
+
+        (&Method::GET, "/domain/requests") => {
+            let connection = db::lib::connect();
+            db::queries::read_requests(&connection);
         }
 
         _ => {
